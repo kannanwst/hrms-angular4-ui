@@ -1,0 +1,20 @@
+<p>
+  user works!  
+</p>
+<div *ngFor="let u of users">
+ {{u |json}}
+</div>
+
+<table>
+        <thead>
+            <th>Name</th>
+            <th>Index</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of users">
+                <td>{{u | json}}</td>
+            </tr>
+        </tbody>
+    </table>
+`
+
