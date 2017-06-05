@@ -9,6 +9,7 @@ import { SkillComponent } from './skill/skill.component';
 import { UserSkillComponent } from './user-skill/user-skill.component';
 import { RatingComponent } from './rating/rating.component';
 
+
 import { UserService } from './user.service';
 import { SkillService } from './skill.service';
 import { CategoryService } from './category.service';
@@ -29,6 +30,17 @@ import { LeavestatusService } from "app/leavestatus.service";
 import { LeavetypeService } from "app/leavetype.service";
 import { DepartmentService } from "app/department.service";
 import { DesignationService } from "app/designation.service";
+import { TrainingComponent } from './training/training.component';
+import { TrainingService } from "app/training.service";
+import { TrainersComponent } from './trainers/trainers.component';
+import { TrainersService } from "app/trainers.service";
+import { BatchComponent } from './batch/batch.component';
+import { BatchService } from "app/batch.service";
+import { CollegeComponent } from './college/college.component';
+import { CollegeService } from "app/college.service";
+import { TicketsComponent } from './tickets/tickets.component';
+import { TicketsService } from "app/tickets.service";
+
 
 
 @NgModule({
@@ -45,7 +57,12 @@ import { DesignationService } from "app/designation.service";
     LeavestatusComponent,
     EmployeeComponent,
     DepartmentComponent,
-    DesignationComponent
+    DesignationComponent,
+    TrainingComponent,
+    TrainersComponent,
+    BatchComponent,
+    CollegeComponent,
+    TicketsComponent
   ],
   imports: [
     BrowserModule,HttpModule,AppRoutingModule
@@ -54,7 +71,7 @@ import { DesignationService } from "app/designation.service";
       RouterModule
   ],
   providers: [UserService,SkillService,CategoryService,RatingService,HolidayService,LeavetypeService,LeavestatusService,
-  DesignationService, DepartmentService],
+  DesignationService, DepartmentService,TrainingService,TrainersService,BatchService,CollegeService,TicketsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
