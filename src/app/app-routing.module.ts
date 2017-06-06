@@ -17,6 +17,7 @@ import { TrainersComponent } from "./trainers/trainers.component";
 import { BatchComponent } from "./batch/batch.component";
 import { CollegeComponent } from "./college/college.component";
 import { TicketsComponent } from "./tickets/tickets.component";
+import { LoginFormComponent } from './login-form/login-form.component';
 
 const appRoutes: Routes = [
   { path: 'skills', component: SkillComponent },
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
   { path: 'batches', component: BatchComponent },
   { path: 'colleges', component: CollegeComponent },
   { path: 'tickets', component: TicketsComponent },
+  { path: 'login', component: LoginFormComponent }
 ];
 
 

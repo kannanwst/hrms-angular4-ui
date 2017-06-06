@@ -1,8 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Skillapp2</title>
+  <title>Revature HRMS</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -161,9 +161,9 @@
 	<ul class="nav navbar-top-links navbar-right">
 
 		<li ng-if="LOGGED_IN_USER==null">
-			<a href="#login" >Login</a> </li>
+			<a routerLink="/login" routerLinkActive="active" href="login" >Login</a> </li>
 		<li ng-if="LOGGED_IN_USER==null">
-			<a href="#register">Register</a>
+			<a routerLink="/register" routerLinkActive="active" href="register">Register</a>
 		</li>
 		<li ng-if="LOGGED_IN_USER!=null">
 			<span class="m-r-sm text-muted welcome-message">Welcome

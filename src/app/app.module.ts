@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -42,6 +43,8 @@ import { TicketsComponent } from './tickets/tickets.component';
 import { TicketsService } from "app/tickets.service";
 import { EmployeeService } from "app/employee.service";
 
+import {AuthenticationService} from "app/authentication.service";
+import { LoginFormComponent } from './login-form/login-form.component';
 
 
 @NgModule({
@@ -63,16 +66,17 @@ import { EmployeeService } from "app/employee.service";
     TrainersComponent,
     BatchComponent,
     CollegeComponent,
-    TicketsComponent
+    TicketsComponent,    
+    LoginFormComponent
   ],
   imports: [
-    BrowserModule,HttpModule,AppRoutingModule
+    BrowserModule,HttpModule,AppRoutingModule,FormsModule
   ],
   exports : [ 
       RouterModule
   ],
   providers: [UserService,SkillService,CategoryService,RatingService,HolidayService,LeavetypeService,LeavestatusService,EmployeeService,
-  DesignationService, DepartmentService,TrainingService,TrainersService,BatchService,CollegeService,TicketsService],
+  DesignationService, DepartmentService,TrainingService,TrainersService,BatchService,CollegeService,TicketsService,AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
