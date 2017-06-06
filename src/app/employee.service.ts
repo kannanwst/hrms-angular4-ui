@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Http } from "@angular/http/http";
-import { Observable } from "rxjs/Observable";
-import { Employee } from "app/employee";
-
+import {Http} from '@angular/http';
+import {Employee} from './employee';
+import 'rxjs/add/operator/map';
+import { Observable }     from 'rxjs/Observable';
 @Injectable()
 export class EmployeeService {
 
-  
-  constructor(private _http: Http) { }
+   constructor(private _http: Http) { }
+    getActiveEmployees() : Observable<Employee[]>{
 
-  findAll(): Observable<Employee[]> {
-    return this._http.get("http://localhost:5000/employees").
-      map(response => response.json() as Employee[]);
-
-  }
+     console.log("Get All employees");
+     return this._http.get("http://localhost:5000/employees").
+     map(response=>response.json() as Employee[]);
+   }
 
 }

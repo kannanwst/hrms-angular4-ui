@@ -40,6 +40,7 @@ import { CollegeComponent } from './college/college.component';
 import { CollegeService } from "app/college.service";
 import { TicketsComponent } from './tickets/tickets.component';
 import { TicketsService } from "app/tickets.service";
+import { EmployeeService } from "app/employee.service";
 
 
 
@@ -70,7 +71,7 @@ import { TicketsService } from "app/tickets.service";
   exports : [ 
       RouterModule
   ],
-  providers: [UserService,SkillService,CategoryService,RatingService,HolidayService,LeavetypeService,LeavestatusService,
+  providers: [UserService,SkillService,CategoryService,RatingService,HolidayService,LeavetypeService,LeavestatusService,EmployeeService,
   DesignationService, DepartmentService,TrainingService,TrainersService,BatchService,CollegeService,TicketsService],
   bootstrap: [AppComponent]
 })
