@@ -43,7 +43,7 @@ export class LoginFormComponent implements OnInit {
                 },
                 error => {
                     //this.alertService.error(error);
-                    this.login_error = false;
+                    this.login_error = true;
                 });
     
   }

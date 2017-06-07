@@ -18,6 +18,7 @@ import { BatchComponent } from "./batch/batch.component";
 import { CollegeComponent } from "./college/college.component";
 import { TicketsComponent } from "./tickets/tickets.component";
 import { LoginFormComponent } from './login-form/login-form.component';
+import { CreateTicketComponent } from "./create-ticket/create-ticket.component";
 
 const appRoutes: Routes = [
   { path: 'skills', component: SkillComponent },
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
   { path: 'batches', component: BatchComponent },
   { path: 'colleges', component: CollegeComponent },
   { path: 'tickets', component: TicketsComponent },
-  { path: 'login', component: LoginFormComponent }
+  { path: 'login', component: LoginFormComponent },
+  { path: 'createTicket', component: CreateTicketComponent }
 ];
 
 

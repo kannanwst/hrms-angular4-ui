@@ -45,6 +45,9 @@ import { EmployeeService } from "app/employee.service";
 
 import {AuthenticationService} from "app/authentication.service";
 import { LoginFormComponent } from './login-form/login-form.component';
+import { CreateTicketComponent } from './create-ticket/create-ticket.component';
+import { CreateTicketService } from "app/create-ticket.service";
+
 
 
 @NgModule({
@@ -67,7 +70,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
     BatchComponent,
     CollegeComponent,
     TicketsComponent,    
-    LoginFormComponent
+    LoginFormComponent,
+    CreateTicketComponent
   ],
   imports: [
     BrowserModule,HttpModule,AppRoutingModule,FormsModule
@@ -76,7 +80,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
       RouterModule
   ],
   providers: [UserService,SkillService,CategoryService,RatingService,HolidayService,LeavetypeService,LeavestatusService,EmployeeService,
-  DesignationService, DepartmentService,TrainingService,TrainersService,BatchService,CollegeService,TicketsService,AuthenticationService],
+  DesignationService, DepartmentService,TrainingService,TrainersService,BatchService,CollegeService,TicketsService,AuthenticationService,CreateTicketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
