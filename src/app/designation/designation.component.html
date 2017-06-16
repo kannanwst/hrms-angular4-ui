@@ -19,21 +19,21 @@
     </div>
 </div>
 <div class="wrapper wrapper-content animated fadeInRight">
-    <!-- <div class="row">
-            <div class="col-lg-12">
+    <div class="row">
+           <!--  <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title"> <h5> Select Department </h5>
                     </div>
                  <div class="ibox-content">
-                <select ng-model="departmentName">
+                <select  [(ngModel)]="dname" >
                     <option value="">--SELECT ALL--</option>
-                    <option ng-repeat="dname in deptNames" ng-value="dname">
-                                            {{dname}}
+                    <option *ngFor="let dname of departments" [ngValue]="dname.name">
+                                            {{dname.name}}
                                             </option>
                 </select>
                  </div>
             </div>
-        </div>-->
+        </div> -->
 
     <div class="row">
         <div class="col-lg-12">

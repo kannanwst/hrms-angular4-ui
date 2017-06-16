@@ -19,6 +19,7 @@ export class LoginFormComponent implements OnInit {
         private router: Router,private _authenticationService: AuthenticationService ) { }
 
   ngOnInit() {
+   
     // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
@@ -29,7 +30,7 @@ export class LoginFormComponent implements OnInit {
   submitted = false;
 
   login_error = false;
-
+   
   onSubmit() { this.submitted = true; 
 
       this.loading = true;
@@ -39,6 +40,7 @@ export class LoginFormComponent implements OnInit {
    
       this._authenticationService.login(this.user).subscribe(
                 data => {
+
                     this.router.navigate(["employees"]);
                 },
                 error => {
@@ -47,5 +49,9 @@ export class LoginFormComponent implements OnInit {
                 });
     
   }
-
+logout() {
+ this.router.navigate(["login"]);
+        // remove user from local storage to log user out
+        localStorage.removeItem('currentUser');
+    }
 }

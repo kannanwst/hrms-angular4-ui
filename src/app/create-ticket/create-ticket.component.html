@@ -37,7 +37,9 @@
                     </div> -->
                 </div>
 
-                
+                <div style="color:green;text-align:center;" *ngIf="ticket_created">
+				Ticket Created Successfully
+			</div>
                 <div >
                     <form (ngSubmit)="addTicket(createTicket)">
 				<div class="form-group">

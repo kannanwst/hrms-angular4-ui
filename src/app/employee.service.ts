@@ -10,8 +10,17 @@ export class EmployeeService {
     getActiveEmployees() : Observable<Employee[]>{
 
      console.log("Get All employees");
-     return this._http.get("http://localhost:5000/employees").
+     return this._http.get("http://localhost:5000/employees/status/active").
      map(response=>response.json() as Employee[]);
+
+   }
+
+    getResignedEmployees() : Observable<Employee[]>{
+
+     console.log("Get All employees");
+     return this._http.get("http://localhost:5000/employees/status/resigned").
+     map(response=>response.json() as Employee[]);
+     
    }
 
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from "@angular/http";
+import { Http, Headers, Response } from '@angular/http';
 import { Observable } from "rxjs/Observable";
 import { User } from "app/user";
 
@@ -8,10 +8,18 @@ export class AuthenticationService {
 
  constructor(private _http:Http) { }
 
-  login(user:User):Observable<User> {
+  login(user:User) {
     console.log("Login User:" + JSON.stringify(user));
     return this._http.post("http://localhost:5000/auth/login", user ).
-    map(response=>response.json() as User);
+    //map(response=>response.json() as User);
+    map((response: Response) => {
+                // login successful if there's a jwt token in the response
+                let user = response.json();
+                if (user) {
+                    // store user details in local storage to keep user logged in between page refreshes
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+                }
+            });
     
   }
 /*

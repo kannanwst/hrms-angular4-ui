@@ -47,6 +47,9 @@ import {AuthenticationService} from "app/authentication.service";
 import { LoginFormComponent } from './login-form/login-form.component';
 import { CreateTicketComponent } from './create-ticket/create-ticket.component';
 import { CreateTicketService } from "app/create-ticket.service";
+import { ResignedEmployeeComponent } from './employee/employee.component';
+import { DepartmentsDashboardComponent } from './departments-dashboard/departments-dashboard.component';
+import { DepartmentsDashboardService } from 'app/departments-dashboard.service';
 
 
 
@@ -71,7 +74,10 @@ import { CreateTicketService } from "app/create-ticket.service";
     CollegeComponent,
     TicketsComponent,    
     LoginFormComponent,
-    CreateTicketComponent
+    CreateTicketComponent,
+    ResignedEmployeeComponent,
+    DepartmentsDashboardComponent
+   
   ],
   imports: [
     BrowserModule,HttpModule,AppRoutingModule,FormsModule
@@ -80,7 +86,7 @@ import { CreateTicketService } from "app/create-ticket.service";
       RouterModule
   ],
   providers: [UserService,SkillService,CategoryService,RatingService,HolidayService,LeavetypeService,LeavestatusService,EmployeeService,
-  DesignationService, DepartmentService,TrainingService,TrainersService,BatchService,CollegeService,TicketsService,AuthenticationService,CreateTicketService],
+  DesignationService, DepartmentService,TrainingService,TrainersService,BatchService,CollegeService,TicketsService,AuthenticationService,CreateTicketService,DepartmentsDashboardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

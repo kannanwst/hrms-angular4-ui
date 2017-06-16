@@ -48,7 +48,7 @@
                                     <th>Designation </th>
                                     <th>Email </th>
                                     <th>Gender </th>                                                                        
-                                    <th>Status</th>
+                                   <!--  <th>Status</th> -->
                                    <!-- <th>Action</th> -->
                                 </tr>
                             </thead>
@@ -56,13 +56,13 @@
                                 <tr *ngFor="let e of employees; let i = index">
                                     <td>{{i+1}}</td>
                                     <td>{{e.code}}</td>
-                                    <td>{{e.user.name}}</td>
-                                    <td>{{e.designation.name}}</td>
-                                    <td>{{e.user.email}}</td>
+                                    <td>{{e.name}}</td>
+                                    <td>{{e.designationName}}</td>
+                                    <td>{{e.email}}</td>
                                     <td>{{e.gender}}</td>                                                                                                           
-                                     <td>
+                                    <!--  <td>
                                         <span ng-class="e.active? 'label label-success':'label label-danger'">{{e.active? "Active" :"Inactive"}}</span>
-                                        </td>
+                                        </td> -->
                                   
                                     
                                 </tr>

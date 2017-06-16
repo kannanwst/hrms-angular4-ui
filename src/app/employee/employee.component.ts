@@ -16,9 +16,38 @@ employees:Employee[] ;
 
   ngOnInit() {
   this.getActiveEmployees();
+  
   }
+  
 getActiveEmployees(){
 	this._employeeService.getActiveEmployees().subscribe(
+     employees => this.employees = employees);
+     console.log("employees :" + JSON.stringify(this.employees));  
+}
+
+}
+
+
+
+
+@Component({
+  selector: 'app-employee',
+  templateUrl: './employee.component.html',
+  styleUrls: ['./employee.component.css']
+})
+export class ResignedEmployeeComponent implements OnInit {
+employees:Employee[] ;
+
+  constructor(private _employeeService: EmployeeService) { }
+
+  ngOnInit() {
+  
+  this.getResignedEmployees()
+  }
+  
+
+getResignedEmployees(){
+    this._employeeService.getResignedEmployees().subscribe(
      employees => this.employees = employees);
      console.log("employees :" + JSON.stringify(this.employees));  
 }

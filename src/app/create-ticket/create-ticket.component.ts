@@ -17,10 +17,11 @@ export class CreateTicketComponent implements OnInit {
  createTicket:any={};
  categories:TicketCategory[] ;
 
+  	
   constructor(private router: Router, private _createTicketService : CreateTicketService) { }
-  
+    	 
   ngOnInit() {
-  this.getAllTicketCategories();
+   this.getAllTicketCategories();
 
   }
 
@@ -30,13 +31,17 @@ export class CreateTicketComponent implements OnInit {
     );
   }
 
- //ticket_created=false;
+ ticket_created=false;
 
    addTicket() {
    	console.log( this.createTicket );
+   	
+        let loggedinuser=JSON.parse(localStorage.getItem('currentUser'));
+        console.log(loggedinuser.id);
+  	console.log(loggedinuser);
    this.createTicket.createdBy=new User();
    this.createTicket.ticketStatus=new TicketStatus();
-   this.createTicket.createdBy.id=1;
+   this.createTicket.createdBy.id=loggedinuser.id;
    this.createTicket.ticketStatus.id=1;
  
    
@@ -47,8 +52,13 @@ export class CreateTicketComponent implements OnInit {
 
       //createTicket => this.createTickets.push(this.createTicket)
        data => {
-    //this.ticket_created=true;
-        this.router.navigate(["tickets"]);
+        this.ticket_created=true;
+       	setTimeout(() => {
+       	this.ticket_created=false;
+        this.router.navigate(['tickets']);
+    }, 3000);
+    
+        //this.router.navigate(["tickets"]);
        	
                       
                 },

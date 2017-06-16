@@ -1,1 +1,136 @@
-<router-outlet></router-outlet>
+
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="assets/theme/img/profile_small.jpg" />
+                             </span>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#myprofile">
+                        <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{LOGGED_IN_USER.name}}</strong>
+                             </span> <span class="text-muted text-xs block">Developer</span> </span>
+                    </a>
+
+                </div>
+                <div class="logo-element">
+                    IN+
+                </div>
+            </li>
+            <li>
+                <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <!-- <li><a href="#employees_dashboard">Employees</a></li> -->
+                    <li><a href="departmentsdashboard">Departments</a></li>
+                    <!-- <li><a href="#designations">Designations</a></li> -->
+                </ul>
+            </li>
+
+            
+            <li>
+                <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">HR</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+
+<li>
+                <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">Employees</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a routerLink="/employees" routerLinkActive="active" href="employees">Active</a></li>
+                    <li><a href="employees/resigned">Resigned</a></li>
+                    <li><a href="#employeesdesignations">Update Designations</a></li>
+
+                </ul>
+            </li>
+                    <li>
+                        <a routerLink="/departments" routerLinkActive="active" href="departments"><i class="fa fa-diamond"></i> <span class="nav-label">Departments</span></a>
+                    </li>
+                    <li>
+                        <a routerLink="/designations" routerLinkActive="active" href="designations"><i class="fa fa-diamond"></i> <span class="nav-label">Designations</span></a>
+                    </li>
+                     <li>
+                        <a href="#employeehierarchy"><i class="fa fa-diamond"></i> <span class="nav-label">Employee Hierarchy</span></a>
+                    </li>
+                </ul>
+                <li>
+                    <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">LMS</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a routerLink="/holidays" routerLinkActive="active" href="holidays">Holidays</a> </li>
+                        <li> <a routerLink="/leavetypes" routerLinkActive="active" href="leavetypes">Leave Types</a></li>
+                        <li> <a routerLink="/leavestatus" routerLinkActive="active" href="leavestatus">Leave Status</a></li>
+                        <li> <a href="#applyleave">Apply Leave</a></li>
+                        <li> <a href="#leaves">Leave History</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">Skill App</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a routerLink="/categories" routerLinkActive="active" href="categories">Categories</a></li>
+                        <li><a routerLink="/skills" routerLinkActive="active" href="skills">Skills</a></li>
+                        <li><a routerLink="/ratings" routerLinkActive="active" href="ratings">Ratings</a></li>
+                        <li><a href="#myskills">My Skills</a></li>
+                       <!-- <li><a href="#userskills">Update Skills</a></li>-->
+
+                    </ul>
+                </li>
+                <li>
+                    <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">Tickets</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="createTicket">Create Ticket</a> </li>
+                        <li> <a href="tickets">List Tickets</a></li>
+                        <li> <a href="#mytickets">My Tickets</a></li>
+                        <li> <a href="#assignedtickets">Assigned Tickets</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">Training</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="trainers">Trainers</a> </li>
+                        <li> <a href="colleges">Colleges</a></li>
+                        <li> <a href="batches">Batches</a></li>
+                        <li> <a href="trainings">Trainings</a></li>
+                        <li> <a href="#studentattendance">Student Attendance</a></li>
+                    </ul>
+                </li>
+                 <li>
+                    <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">Timesheet</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="#">Shift Timings</a> </li>
+                        <li> <a href="#">Biometric Timings</a></li>
+                    </ul>
+                </li>
+        </ul>
+
+    </div>
+</nav>
+<!-- end of side menu -->
+
+
+	<div id="wrapper">
+
+		<div id="page-wrapper" class="gray-bg">
+			<div class="row border-bottom">
+
+	<!--header layout -->
+<nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0" ng-controller="AuthController">
+	<ul class="nav navbar-top-links navbar-right">
+
+		<li ng-if="LOGGED_IN_USER==null">
+			<a routerLink="/login" routerLinkActive="active" href="login" >Login</a> </li>
+		<li ng-if="LOGGED_IN_USER==null">
+			<a routerLink="/register" routerLinkActive="active" href="register">Register</a>
+		</li>
+		<li ng-if="LOGGED_IN_USER!=null">
+			<span class="m-r-sm text-muted welcome-message">Welcome
+				{{LOGGED_IN_USER.name}}</span></li>
+		<li ng-if="LOGGED_IN_USER!=null">
+			<a href="logout" ng-click="logout()"> <i class="fa fa-sign-out"></i> Log out
+			</a>
+		</li>
+	</ul>
+</nav>
+	<!--end of header layout -->
+</div>
+<div><router-outlet></router-outlet></div>
+</div>
+</div>
+
+

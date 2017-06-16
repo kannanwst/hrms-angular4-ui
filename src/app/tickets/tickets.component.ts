@@ -11,7 +11,7 @@ import { TicketsService } from '../tickets.service';
 export class TicketsComponent implements OnInit {
 
   tickets:Tickets[] ;
-
+ 
   constructor(private _ticketsService: TicketsService) { }
 
   ngOnInit() {
@@ -20,6 +20,7 @@ export class TicketsComponent implements OnInit {
 getAllTickets(){
 	this._ticketsService.getAllTickets().subscribe(
      tickets => this.tickets = tickets);
+
      console.log("tickets :" + JSON.stringify(this.tickets));  
 }
 }

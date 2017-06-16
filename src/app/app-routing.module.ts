@@ -19,14 +19,19 @@ import { CollegeComponent } from "./college/college.component";
 import { TicketsComponent } from "./tickets/tickets.component";
 import { LoginFormComponent } from './login-form/login-form.component';
 import { CreateTicketComponent } from "./create-ticket/create-ticket.component";
+import { ResignedEmployeeComponent } from "app/employee/employee.component";
+import { DepartmentsDashboardComponent } from './departments-dashboard/departments-dashboard.component';
+
 
 const appRoutes: Routes = [
+
   { path: 'skills', component: SkillComponent },
   { path: 'categories', component: CategoryComponent },
   { path: 'ratings', component: RatingComponent },
   { path: 'holidays', component: HolidayComponent },
 
   { path: 'employees', component: EmployeeComponent },
+  { path: 'employees/resigned', component: ResignedEmployeeComponent },
   { path: 'departments', component: DepartmentComponent },
   { path: 'designations', component: DesignationComponent },
 
@@ -38,7 +43,11 @@ const appRoutes: Routes = [
   { path: 'colleges', component: CollegeComponent },
   { path: 'tickets', component: TicketsComponent },
   { path: 'login', component: LoginFormComponent },
-  { path: 'createTicket', component: CreateTicketComponent }
+  { path: 'createTicket', component: CreateTicketComponent },
+  { path: 'logout', component: LoginFormComponent },
+  { path: 'departments_dashboard', component: DepartmentsDashboardComponent },
+  { path: '**', component: LoginFormComponent },
+  
 ];
 
 
